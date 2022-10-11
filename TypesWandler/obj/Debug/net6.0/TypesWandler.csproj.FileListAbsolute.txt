@@ -1,0 +1,15 @@
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.exe
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.deps.json
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.runtimeconfig.json
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.dll
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.pdb
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.csproj.AssemblyReference.cache
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.AssemblyInfoInputs.cache
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.AssemblyInfo.cs
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.csproj.CoreCompileInputs.cache
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.dll
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\refint\TypesWandler.dll
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.pdb
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.genruntimeconfig.cache
+C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\ref\TypesWandler.dll

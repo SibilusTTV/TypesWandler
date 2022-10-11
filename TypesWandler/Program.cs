@@ -1,140 +1,115 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text.RegularExpressions;
 
-Console.WriteLine("Hello, World!");
+string types;
+string massTypes;
+string expansionTypes;
+Main();
 
-string types = File.ReadAllText("types.xml");
-string massTypes = File.ReadAllText("massTypes.xml");
-string expansionTypes = File.ReadAllText("expansion_types.xml");
-string[] gunRarities = File.ReadAllLines("gunRarities.txt");
-string[] ammoRarities = File.ReadAllLines("ammoRarities.txt");
-string[] magRarities = File.ReadAllLines("magRarities.txt");
 
-for (int i = 0; i < gunRarities.Length; i++)
+void Main()
 {
-    string pattern = "(.+) (.+) ([0-9]+)";
-    Regex rg = new Regex(pattern);
-    Match match = rg.Match(gunRarities[i]);
-    if (match.Success)
-    {
-        string type = match.Groups[1].Value;
-        string rarity = match.Groups[2].Value;
-        int variants = int.Parse(match.Groups[3].Value);
-        int nominal = 0;
-        int min;
-        switch (rarity)
-        {
-            case "common":
-                nominal = 80 / variants;
-                break;
-
-            case "uncommon":
-                nominal = 40 / variants;
-                break;
-
-            case "rare":
-                nominal = 20 / variants;
-                break;
-
-            case "epic":
-                nominal = 10 / variants;
-                break;
-
-            case "legendary":
-                nominal = 5 / variants;
-                break;
-
-        }
-        min = nominal / 2;
-
-
-
-    }
-
+    types = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\types.xml");
+    massTypes = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\massTypes.xml");
+    expansionTypes = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\expansion_types.xml");
+    string[] gunRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\gunRarities.txt");
+    // string[] ammoRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\ammoRarities.txt");
+    string[] magRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\magRarities.txt");
+    string patternRarities = "(.+) (.+) ([0-9]+)";
+    string patternTypes1 = "[^\\n]*<type name=\"";
+    string patternTypes2 = "\">[\\s\\S]*?\\s*<\\/type>";
+    SetGunRarities(patternRarities, gunRarities, patternTypes1, patternTypes2);
+    SetMagRarities(patternRarities, magRarities, patternTypes1, patternTypes2);
 }
-/*
-for (int i = 0; i < ammoRarities.Length; i++)
+
+void SetGunRarities(string pattern, string[] gunRarities, string patternTypes1, string patternTypes2)
 {
-
-    string pattern = "(.+) (.+) ([0-9]+)";
     Regex rg = new Regex(pattern);
-    Match match = rg.Match(ammoRarities[i]);
-    if (match.Success)
+    for (int i = 0; i < gunRarities.Length; i++)
     {
-        string type = match.Groups[1].Value;
-        string rarity = match.Groups[2].Value;
-        int variants = int.Parse(match.Groups[3].Value);
-        int nominal = 0;
-        int min;
-        switch (rarity)
+        Match match = rg.Match(gunRarity);
+        if (match.Success)
         {
-            case "common":
-                nominal = 80 / variants;
-                break;
+            string type = match.Groups[1].Value;
+            string rarity = match.Groups[2].Value;
+            int variants = int.Parse(match.Groups[3].Value);
+            int nominal = 0;
+            int min;
+            int buy;
+            int sell;
+            switch (rarity)
+            {
+                case "common":
+                    nominal = 80 / variants;
+                    break;
 
-            case "uncommon":
-                nominal = 40 / variants;
-                break;
+                case "uncommon":
+                    nominal = 40 / variants;
+                    break;
 
-            case "rare":
-                nominal = 20 / variants;
-                break;
+                case "rare":
+                    nominal = 20 / variants;
+                    break;
 
-            case "epic":
-                nominal = 10 / variants;
-                break;
+                case "epic":
+                    nominal = 10 / variants;
+                    break;
 
-            case "legendary":
-                nominal = 5 / variants;
-                break;
+                case "legendary":
+                    nominal = 5 / variants;
+                    break;
 
+            }
+            min = nominal / 2;
+
+            string patternTypes = patternTypes1 + type + patternTypes2;
+
+            string item = SearchInTypes(patternTypes, types);
+
+            if (item != null)
+            {
+
+            }
+            else
+            {
+                item = SearchInTypes(patternTypes, expansionTypes);
+                if (item != null)
+                {
+
+                }
+                else
+                {
+                    item = SearchInTypes(patternTypes, massTypes);
+                    if (item != null)
+                    {
+
+                    }
+                }
+            }
         }
-        min = nominal / 2;
-
-
-
     }
 }
-*/
-for (int i = 0; i < magRarities.Length; i++)
+void SetMagRarities(string pattern, string[] magRarities, string patternTypes1, string patternTypes2)
 {
-
-    string pattern = "(.+) (.+) ([0-9]+)";
     Regex rg = new Regex(pattern);
-    Match match = rg.Match(magRarities[i]);
+    for (int i = 0; i < magRarities.Length; i++)
+    {
+        
+    }
+}
+
+string SearchInTypes(string pattern, string types)
+{
+    Regex rg = new Regex(pattern);
+
+    Match match = rg.Match(types);
+
     if (match.Success)
     {
-        string type = match.Groups[1].Value;
-        string rarity = match.Groups[2].Value;
-        int variants = int.Parse(match.Groups[3].Value);
-        int nominal = 0;
-        int min;
-        switch (rarity)
-        {
-            case "common":
-                nominal = 160 / variants;
-                break;
-
-            case "uncommon":
-                nominal = 80 / variants;
-                break;
-
-            case "rare":
-                nominal = 40 / variants;
-                break;
-
-            case "epic":
-                nominal = 20 / variants;
-                break;
-
-            case "legendary":
-                nominal = 10 / variants;
-                break;
-
-        }
-        min = nominal / 2;
-
-
-
+        return match.Groups[0].Value;
+    }
+    else
+    {
+        return null;
     }
 }
