@@ -14,18 +14,18 @@ void Main()
     expansionTypes = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\expansion_types.xml");
     string[] gunRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\gunRarities.txt");
     // string[] ammoRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\ammoRarities.txt");
-    string[] magRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\magRarities.txt");
+    // string[] magRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\magRarities.txt");
     string patternRarities = "(.+) (.+) ([0-9]+)";
     string patternTypes1 = "[^\\n]*<type name=\"";
     string patternTypes2 = "\">[\\s\\S]*?\\s*<\\/type>";
     SetGunRarities(patternRarities, gunRarities, patternTypes1, patternTypes2);
-    SetMagRarities(patternRarities, magRarities, patternTypes1, patternTypes2);
+    // SetMagRarities(patternRarities, magRarities, patternTypes1, patternTypes2);
 }
 
 void SetGunRarities(string pattern, string[] gunRarities, string patternTypes1, string patternTypes2)
 {
     Regex rg = new Regex(pattern);
-    for (int i = 0; i < gunRarities.Length; i++)
+    foreach (string gunRarity in gunRarities)
     {
         Match match = rg.Match(gunRarity);
         if (match.Success)
@@ -68,21 +68,22 @@ void SetGunRarities(string pattern, string[] gunRarities, string patternTypes1, 
 
             if (item != null)
             {
-
+                string newItem = ReplaceValues(item, nominal, min);
+                Console.WriteLine(newItem);
             }
             else
             {
                 item = SearchInTypes(patternTypes, expansionTypes);
                 if (item != null)
                 {
-
+                    string newItem = ReplaceValues(item, nominal, min);
                 }
                 else
                 {
                     item = SearchInTypes(patternTypes, massTypes);
                     if (item != null)
                     {
-
+                        string newItem = ReplaceValues(item, nominal, min);
                     }
                 }
             }
@@ -112,4 +113,25 @@ string SearchInTypes(string pattern, string types)
     {
         return null;
     }
+}
+
+string ReplaceValues(string item, int nominal, int min)
+{
+    Regex rgN = new Regex("[^\\n\\S]*<nominal>([0-9]+)<\\/nominal>");
+    Match matchN = rgN.Match(item);
+    if (matchN.Success)
+    {
+        string newNominal = matchN.Groups[0].Value.Replace(matchN.Groups[1].Value, nominal.ToString());
+        item = item.Replace(matchN.Groups[0].Value, newNominal);
+    }
+
+    Regex rgM = new Regex("[^\\n\\S]*<min>([0-9]+)<\\/min>");
+    Match matchM = rgM.Match(item);
+    if (matchM.Success)
+    {
+        string newMin = matchM.Groups[0].Value.Replace(matchM.Groups[1].Value, min.ToString());
+        item = item.Replace(matchM.Groups[0].Value, newMin);
+    }
+
+    return item;
 }
