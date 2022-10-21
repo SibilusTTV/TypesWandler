@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\julian.pfeiff\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\julia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\TypesWandler\\TypesWandler.csproj",
+      "projectUniqueName": "D:\\Omega Manager\\servers\\TypesWandler\\TypesWandler\\TypesWandler.csproj",
       "projectName": "TypesWandler",
-      "projectPath": "C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\TypesWandler\\TypesWandler.csproj",
-      "packagesPath": "C:\\Users\\julian.pfeiff\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\TypesWandler\\obj\\",
+      "projectPath": "D:\\Omega Manager\\servers\\TypesWandler\\TypesWandler\\TypesWandler.csproj",
+      "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+      "outputPath": "D:\\Omega Manager\\servers\\TypesWandler\\TypesWandler\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\julian.pfeiff\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

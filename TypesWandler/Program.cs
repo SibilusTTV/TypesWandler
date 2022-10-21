@@ -4,15 +4,19 @@ using System.Text.RegularExpressions;
 string types;
 string massTypes;
 string expansionTypes;
+string typesPath = "types.xml";
+string massTypesPath = "massTypes.xml";
+string expansionTypesPath = "expansion_types.xml";
+string gunRaritiesPath = "gunRarities.txt";
 Main();
 
 
 void Main()
 {
-    types = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\types.xml");
-    massTypes = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\massTypes.xml");
-    expansionTypes = File.ReadAllText("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\expansion_types.xml");
-    string[] gunRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\gunRarities.txt");
+    types = File.ReadAllText(typesPath);
+    massTypes = File.ReadAllText(massTypesPath);
+    expansionTypes = File.ReadAllText(expansionTypesPath);
+    string[] gunRarities = File.ReadAllLines(gunRaritiesPath);
     // string[] ammoRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\ammoRarities.txt");
     // string[] magRarities = File.ReadAllLines("C:\\Users\\julian.pfeiff\\source\\repos\\TypesWandler\\magRarities.txt");
     string patternRarities = "(.+) (.+) ([0-9]+)";
@@ -69,7 +73,7 @@ void SetGunRarities(string pattern, string[] gunRarities, string patternTypes1, 
             if (item != null)
             {
                 string newItem = ReplaceValues(item, nominal, min);
-                Console.WriteLine(newItem);
+                types = types.Replace(item, newItem);
             }
             else
             {
@@ -77,6 +81,7 @@ void SetGunRarities(string pattern, string[] gunRarities, string patternTypes1, 
                 if (item != null)
                 {
                     string newItem = ReplaceValues(item, nominal, min);
+                    expansionTypes = expansionTypes.Replace(item, newItem);
                 }
                 else
                 {
@@ -84,11 +89,17 @@ void SetGunRarities(string pattern, string[] gunRarities, string patternTypes1, 
                     if (item != null)
                     {
                         string newItem = ReplaceValues(item, nominal, min);
+                        massTypes = massTypes.Replace(item, newItem);
                     }
                 }
             }
         }
     }
+
+    File.WriteAllText(expansionTypesPath, expansionTypes);
+    File.WriteAllText(typesPath, types);
+    File.WriteAllText(massTypesPath, massTypes);
+
 }
 void SetMagRarities(string pattern, string[] magRarities, string patternTypes1, string patternTypes2)
 {

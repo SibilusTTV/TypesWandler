@@ -1,0 +1,3 @@
+AK101 legendary 1
+AK74 uncommon 1
+AK74_Black legendary 1

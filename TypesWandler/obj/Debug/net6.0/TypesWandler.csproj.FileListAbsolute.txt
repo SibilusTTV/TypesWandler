@@ -13,3 +13,18 @@ C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\r
 C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.pdb
 C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.genruntimeconfig.cache
 C:\Users\julian.pfeiff\source\repos\TypesWandler\TypesWandler\obj\Debug\net6.0\ref\TypesWandler.dll
+D:\Omega Manager\servers\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.exe
+D:\Omega Manager\servers\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.deps.json
+D:\Omega Manager\servers\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.runtimeconfig.json
+D:\Omega Manager\servers\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.dll
+D:\Omega Manager\servers\TypesWandler\TypesWandler\bin\Debug\net6.0\TypesWandler.pdb
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.csproj.AssemblyReference.cache
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.GeneratedMSBuildEditorConfig.editorconfig
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.AssemblyInfoInputs.cache
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.AssemblyInfo.cs
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.csproj.CoreCompileInputs.cache
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.dll
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\refint\TypesWandler.dll
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.pdb
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\TypesWandler.genruntimeconfig.cache
+D:\Omega Manager\servers\TypesWandler\TypesWandler\obj\Debug\net6.0\ref\TypesWandler.dll
